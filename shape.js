@@ -79,8 +79,8 @@ class PointShape extends Shape {
 }
 
 class LineShape extends Shape {
-	constructor(vecc1, vec2) {
-		super([vec1 || new VEctor2D(), vec2 || new Vector2D()]);
+	constructor(vec1, vec2) {
+		super([vec1 || new Vector2D(), vec2 || new Vector2D()]);
 	}
 	get a() { return this.verticesList[0]; }
 	get b() { return this.verticesList[1]; }

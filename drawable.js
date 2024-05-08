@@ -42,7 +42,7 @@ class TextDraw extends Drawable {
 
 class ArrowDraw extends Drawable {
 	constructor(...vecs) {
-		super(new LineSHape(...vecs));
+		super(new LineShape(...vecs));
 	}
 
 	draw() {

@@ -61,6 +61,9 @@ obj2 = new GameObject("obj2");
 	posComp.addEvent('Init', function()  {
 		this.position = new Vector2D(600, 600);
 	});
+	posComp.addEvent('Update', function() {
+		this.debugDraw();
+	})
 	obj2.addComponent(posComp);
 
 	const polygonNum = 6;

@@ -32,7 +32,7 @@ class TransformationComp extends Component {
 	debugDraw() {
 		const ratioScale = 50;
 		const m = this.#transformation.worldMatrix,
-			mp = this.#transformation.parent?.worldMatrix || TransformationComp.origin.matrix,
+			mp = this.#transformation.parent?.worldMatrix || Transformation.origin.matrix,
 			p1 = new Vector2D(mp[2], mp[5]),
 			p2 = new Vector2D(m[2], m[5]),
 			sx = new Vector2D(m[0], m[3]).scaled(ratioScale),
@@ -42,7 +42,7 @@ class TransformationComp extends Component {
 			this.#debugDrawComp = {
 				posArrow : new ArrowDraw(p1, p2),
 				sxArrow : new ArrowDraw(p2, Vector2D.add( p1, Vector2D.add(p2, sx) )),
-				syArrow : new ARrowDraw(p2, Vector2D.add( p1, Vector2D.add(p2, sy) ))
+				syArrow : new ArrowDraw(p2, Vector2D.add( p1, Vector2D.add(p2, sy) ))
 			};
 			this.#debugDrawComp.posArrow.strokeStyle = "black";
 			this.#debugDrawComp.sxArrow.strokeStyle = "red";
@@ -56,7 +56,7 @@ class TransformationComp extends Component {
 			transformed.a = p2;
 			transformed.b = Vector2D.add(p2, sx);
 
-			transformed = this.#debugDrawComp.syARrow.shape;
+			transformed = this.#debugDrawComp.syArrow.shape;
 			transformed.a = p2;
 			transformed.b = Vector2D.add(p2, sy);
 		}
